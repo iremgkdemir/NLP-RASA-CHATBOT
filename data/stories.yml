@@ -1,0 +1,95 @@
+version: "3.1"
+
+stories:
+
+- story: selamlama_senaryosu
+  steps:
+  - intent: selamla
+  - action: utter_selamla
+
+- story: vedalaşma_senaryosu
+  steps:
+  - intent: vedalaş
+  - action: utter_vedalaş
+
+
+- story: bot_sorusu_senaryosu
+  steps:
+  - intent: bot_sorusu
+  - action: utter_ben_bir_botum
+
+- story: teşekkür_senaryosu
+  steps:
+  - intent: teşekkür
+  - action: utter_teşekkür
+
+- story: neler_yapabilir_senaryosu
+  steps:
+  - intent: neler_yapabilir
+  - action: utter_neler_yapabilir
+
+- story: Kullanıcı nasılsın diye sorar ve ruh halini belirtir
+  steps:
+  - intent: sor_nasılsın
+  - action: utter_cevap_nasılsın
+  - intent: mod_harika
+  - action: utter_tepki_mutlu
+  - action: utter_devam_et
+
+- story: Kullanıcı nasılsın diye sorar ve ruh halini belirtir
+  steps:
+  - intent: sor_nasılsın
+  - action: utter_cevap_nasılsın
+  - intent: mod_üzgün
+  - action: utter_tepki_üzgün
+  - action: utter_devam_et
+
+- story: hava durumu şehir ile
+  steps:
+  - intent: sor_hava_durumu
+    entities:
+    - sehir: "İstanbul"
+  - action: action_hava_durumu
+
+- story: hava durumu şehir olmadan
+  steps:
+  - intent: sor_hava_durumu
+  - action: utter_sor_hangi_sehir
+  - intent: ver_sehir
+    entities:
+    - sehir: "Ankara"
+  - action: action_hava_durumu
+
+- story: Kullanıcı yerel saat bilgisi soruyor
+  steps:
+  - intent: ask_time
+  - action: action_tarih_saat
+
+- story: Kullanıcı şehir için saat bilgisi soruyor
+  steps:
+  - intent: ask_time
+  - slot_was_set:
+    - sehir: "Londra"
+  - action: action_tarih_saat
+
+
+- story: Kullanıcı New York için saat bilgisi soruyor
+  steps:
+  - intent: ask_time
+    entities:
+    - sehir: "New York"
+  - action: action_tarih_saat
+
+- story: Kullanıcı Tokyo için saat bilgisi soruyor
+  steps:
+  - intent: ask_time
+    entities:
+    - sehir: "Tokyo"
+  - action: action_tarih_saat
+
+- story: Kullanıcı Berlin için saat bilgisi soruyor
+  steps:
+  - intent: ask_time
+    entities:
+    - sehir: "Berlin"
+  - action: action_tarih_saat

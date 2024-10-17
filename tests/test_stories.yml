@@ -1,0 +1,130 @@
+version: "3.1"
+
+test_stories:
+- story: selamlama senaryosu testi
+  steps:
+  - user: |
+      merhaba
+    intent: selamla
+  - action: utter_selamla
+
+- story: vedalaşma senaryosu testi
+  steps:
+  - user: |
+      görüşürüz
+    intent: vedalaş
+  - action: utter_vedalaş
+
+
+
+- story: Kullanıcı nasılsın diye sorar ve mutlu cevabı verir
+  steps:
+  - user: |
+      Nasılsın?
+    intent: sor_nasılsın
+  - action: utter_cevap_nasılsın
+  - user: |
+      harika
+    intent: mod_harika
+  - action: utter_tepki_mutlu
+  - action: utter_devam_et
+
+- story: Kullanıcı nasılsın diye sorar ve üzgün cevabı verir
+  steps:
+  - user: |
+      Günün nasıl gidiyor?
+    intent: sor_nasılsın
+  - action: utter_cevap_nasılsın
+  - user: |
+      üzgünüm
+    intent: mod_üzgün
+  - action: utter_tepki_üzgün
+  - action: utter_devam_et
+
+- story: bot sorusu senaryosu testi
+  steps:
+  - user: |
+      sen bir bot musun?
+    intent: bot_sorusu
+  - action: utter_ben_bir_botum
+
+- story: teşekkür senaryosu testi
+  steps:
+  - user: |
+      teşekkür ederim
+    intent: teşekkür
+  - action: utter_teşekkür
+
+- story: neler yapabilir senaryosu testi
+  steps:
+  - user: |
+      neler yapabilirsin?
+    intent: neler_yapabilir
+  - action: utter_neler_yapabilir
+
+- story: test hava durumu şehir ile
+  steps:
+  - intent: sor_hava_durumu
+    entities:
+    - sehir: "Manisa"
+  - action: action_hava_durumu
+  - check:
+      prediction:
+        action: action_hava_durumu
+
+- story: test hava durumu şehir olmadan
+  steps:
+  - intent: sor_hava_durumu
+  - action: utter_sor_hangi_sehir
+  - intent: ver_sehir
+    entities:
+    - sehir: "İstanbul"
+  - action: action_hava_durumu
+  - check:
+      prediction:
+        action: action_hava_durumu
+
+- story: Kullanıcı yurtdışı şehir için hava durumu sorar
+  steps:
+  - intent: hava_durumu_sorma
+    entities:
+      - sehir: "New York"
+  - action: action_hava_durumu
+  - action: action_liste
+
+- story: Kullanıcı başka bir yurtdışı şehir için hava durumu sorar
+  steps:
+  - intent: hava_durumu_sorma
+    entities:
+      - sehir: "Tokyo"
+  - action: action_hava_durumu
+  - action: action_liste
+
+
+- story: Kullanıcı New York için saat soruyor
+  steps:
+  - intent: ask_time
+    entities:
+      - sehir: "New York"
+  - action: action_tarih_saat
+
+- story: Kullanıcı Tokyo için saat soruyor
+  steps:
+  - intent: ask_time
+    entities:
+      - sehir: "Tokyo"
+  - action: action_tarih_saat
+
+- story: Kullanıcı Paris için saat soruyor
+  steps:
+  - intent: ask_time
+    entities:
+      - sehir: "Paris"
+  - action: action_tarih_saat
+
+- story: Kullanıcı Sydney için saat soruyor
+  steps:
+  - intent: ask_time
+    entities:
+      - sehir: "Sydney"
+  - action: action_tarih_saat

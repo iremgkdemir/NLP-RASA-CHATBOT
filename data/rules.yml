@@ -1,0 +1,22 @@
+version: "3.1"
+rules:
+- rule: Activate loop
+  steps:
+  - intent: selamla
+  - action: utter_selamla
+
+- rule: Say goodbye
+  steps:
+  - intent: vedalaş
+  - action: utter_vedalaş
+
+- rule: Tarih ve saat sorulduğunda yerel saat göster
+  steps:
+  - intent: ask_time
+  - action: action_tarih_saat
+
+#- rule: Hava durumu sorgulama
+#  steps:
+#  - intent: sor_hava_durumu
+#  - action: action_hava_durumu
+#  - active_loop: null

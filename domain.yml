@@ -1,0 +1,98 @@
+version: '3.1'
+
+intents:
+  - selamla
+  - vedalaş
+  - onayla
+  - reddet
+  - mod_harika
+  - mod_üzgün
+  - sor_nasılsın
+  - bot_sorusu
+  - teşekkür
+  - neler_yapabilir
+  - sor_hava_durumu
+  - ver_sehir
+  - ask_time
+
+entities:
+  - sehir
+  - timezone
+
+
+slots:
+  sehir:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: sehir
+
+  timezone:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: timezone
+
+
+actions:
+  - action_hava_durumu
+  - action_tarih_saat
+
+responses:
+  utter_sor_hangi_sehir:
+    - text: "Hangi şehrin hava durumu bilgisini almak istiyorsunuz?"
+
+  utter_hava_durumu:
+    - text: "{sehir} için hava durumu: {weather_info}"
+
+  utter_selamla:
+    - text: 'Merhaba! Nasılsın?'
+    - text: 'Selam!'
+
+#  utter_neşelen:
+#    - text: 'İşte seni neşelendirecek bir şey:'
+#      image: 'https://i.imgur.com/nGF1K8f.jpg'
+
+  utter_bu_yardımcı_oldu_mu:
+    - text: 'Bu yardımcı oldu mu?'
+
+  utter_cevap_nasılsın:
+    - text: 'Harika gidiyor, sen nasılsın?'
+
+  utter_devam_et:
+    - text: 'Size nasıl yardımcı olabilirim?'
+
+  utter_tepki_mutlu:
+    - text: 'Harika! Mutlu olmanıza çok sevindim. :)'
+
+  utter_tepki_üzgün:
+      - text: 'Üzgün olduğunuzu duymak beni üzdü. :('
+
+  utter_vedalaş:
+   - text: 'Hoşçakal'
+
+  utter_ben_bir_botum:
+    - text: 'Ben bir botum, Rasa tarafından destekleniyorum.'
+
+  utter_teşekkür:
+    - text: 'Rica ederim!'
+
+
+  utter_neler_yapabilir:
+    - text: 'Bana basit sorular sorabilirsin. Seve seve cevaplarım.'
+    - text: 'Hava durumu, tarih saat bilgilerini öğrenebilir. Dizi, film ve müzik önerebilirim. Ne sormak istersin?'
+    - text: 'Sana birçok konuda yardım edebilirim.'
+
+  utter_anlik_tarih_saat:
+    - text: "Bugünün tarihi ve saati: {tarih_saat}"
+
+  utter_yurtdisi_saat_bilgisi:
+    - text: "{sehir} için anlık tarih ve saat bilgisi: {tarih_saat}"
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

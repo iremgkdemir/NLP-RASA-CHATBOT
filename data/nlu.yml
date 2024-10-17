@@ -1,0 +1,449 @@
+version: "3.1"
+
+nlu:
+
+- intent: selamla
+  examples: |
+    - merhaba
+    - selam
+    - merhabalar
+    - günaydın
+    - iyi akşamlar
+    - nasılsın
+    - selamlar
+    - haydi başlayalım
+    - hey dostum
+    - iyi günler
+
+- intent: vedalaş
+  examples: |
+    - görüşürüz
+    - hoşçakal
+    - kendine iyi bak
+    - iyi geceler
+    - güle güle
+    - hoşça kal
+    - iyi günler dilerim
+    - tekrar görüşmek üzere
+    - bay bay
+    - bye
+    - bb
+
+- intent: onayla
+  examples: |
+    - evet
+    - e
+    - aynen
+    - tabii ki
+    - kulağa hoş geliyor
+    - doğru
+
+- intent: reddet
+  examples: |
+    - hayır
+    - h
+    - asla
+    - sanmıyorum
+    - bunu beğenmedim
+    - imkansız
+    - pek sayılmaz
+
+- intent: mod_harika
+  examples: |
+    - mükemmel
+    - harika
+    - inanılmaz
+    - kendimi kral gibi hissediyorum
+    - muhteşem
+    - çok iyiyim
+    - harikayım
+    - müthişim
+    - dünyayı kurtaracağım
+    - süper heyecanlıyım
+    - aşırı iyi
+    - çok mükemmel
+    - çok iyi
+    - çok harika
+
+- intent: mod_üzgün
+  examples: |
+    - günüm berbat geçti
+    - üzgünüm
+    - pek iyi hissetmiyorum
+    - hayal kırıklığına uğradım
+    - çok üzgünüm
+    - mutsuzum
+    - moralim bozuk
+    - hiç iyi değilim
+    - çok üzgünüm
+    - aşırı üzgünüm
+    - çok kötü hissediyorum
+    - çok moralim bozuk
+
+- intent: bot_sorusu
+  examples: |
+    - sen bir bot musun?
+    - insan mısın?
+    - bir botla mı konuşuyorum?
+    - bir insanla mı konuşuyorum?
+
+- intent: sor_nasılsın
+  examples: |
+    - Nasılsın?
+    - Günün nasıl gidiyor?
+    - Bugün nasılsın?
+    - Nasıl gidiyor?
+    - Ne yapıyorsun?
+    - Günlerin nasıl?
+    - Keyifler nasıl?
+
+- intent: neler_yapabilir
+  examples: |
+    - neler yapabilirsin?
+    - yetkinliklerin neler?
+    - yardımcı olabileceğin konular neler?
+    - yardım et
+    - yardım
+
+- intent: teşekkür
+  examples: |
+    - teşekkür ederim
+    - sağ ol   
+
+- intent: sor_hava_durumu
+  examples: |
+    - [İstanbul](sehir) için hava durumu nedir?
+    - [istanbul](sehir) için hava durumu nedir?
+    - [Ankara](sehir) için hava durumu
+    - [ankara](sehir) için hava durumu
+    - [izmir](sehir) için hava durumu
+    - [Ordu](sehir) için hava durumu
+    - [Londra](sehir) için hava durumu
+    - [Erzurum](sehir) hava durumu nedir?
+    - [erzurum](sehir) için hava durumu
+    - [Manisa](sehir) hava durumu nedir?
+    - [manisa](sehir) hava nasıl?
+    - [diyarbakır](sehir) hava durumu
+    - [Diyarbakır](sehir) hava durumu
+    - [Van](sehir) için hava durumu
+    - [van](sehir) hava durumu nedir?
+    - [muş](sehir) için hava durumu
+    - [Muş](sehir) hava durumu nedir?
+    - [rize](sehir) için hava durumu
+    - [Rize](sehir) hava durumu nedir?
+    - [Londra](sehir) hava durumu nedir?
+    - [londra](sehir) hava durumu nedir?
+    - [tokyo](sehir) hava durumu nedir?
+    - [Tokyo](sehir) hava durumu nedir?
+    - [NYC](sehir) hava durumu nedir?
+    - Bugün [İstanbul](sehir) hava nasıl?
+    - [Ankara](sehir) hava durumu nedir?
+    - Hava durumu nedir?
+    - Bugün hava nasıl?
+    - Hava durumu
+    - [Berlin](sehir) hava durumu nedir?
+    - [Berlin](sehir) için hava nasıl?
+    - [Moskova](sehir)'da hava durumu nasıl?
+    - [Pekin](sehir) için hava durumu nedir?
+    - [Mumbai](sehir) hava durumu nasıl?
+    - [Dubai](sehir) için hava durumu raporu
+    - [Los Angeles](sehir)'ta hava nasıl?
+    - [Toronto](sehir) hava durumu raporu nedir?
+    - [Buenos Aires](sehir)'te hava durumu nedir?
+    - Bugün [Seul](sehir) nasıl bir hava bekliyor?
+    - [Hong Kong](sehir)'da hava bugün nasıl?
+    - [Cape Town](sehir) hava durumu nedir?
+    - [Sao Paulo](sehir) için hava raporu
+    - [Mexico City](sehir)'de hava durumu nasıl?
+    - [Sydney](sehir)'de bugün hava nasıl?
+    - [Melbourne](sehir) için hava durumu raporu nedir?
+    - [Auckland](sehir)'da hava nasıl?
+    - [Riyad](sehir) için bugün hava durumu nedir?
+    - [Kahire](sehir)'de hava nasıl?
+
+
+- intent: ver_sehir
+  examples: |
+    - [Ankara](sehir)
+    - [ankara](sehir)
+    - [Samsun](sehir)
+    - [İzmir](sehir)
+    - [izmir](sehir)
+    - [muş](sehir)
+    - [antalya](sehir)
+    - [Muş](sehir)
+    - [Antalya](sehir)
+    - [adana](sehir)
+    - [Adana](sehir)
+    - [Erzurum](sehir)
+    - [erzurum](sehir)
+    - [Kars](sehir)
+    - [kars](sehir)
+    - [rize](sehir)
+    - [Bartın](sehir)
+    - [bartın](sehir)
+    - [Batman](sehir)
+    - [batman](sehir)
+    - [LONDRA](sehir)
+    - [NYC](sehir)
+    - [Brezilya](sehir)
+    - [Moskova](sehir)
+    - [moskova](sehir)
+    - [Paris](sehir)
+    - [paris](sehir)
+    - [Berlin](sehir)
+    - [berlin](sehir)
+    - [Madrid](sehir)
+    - [madrid](sehir)
+    - [Mumbai](sehir)
+    - [mumbai](sehir)
+    - [Pekin](sehir)
+    - [pekin](sehir)
+    - [Seul](sehir)
+    - [seul](sehir)
+    - [Dubai](sehir)
+    - [dubai](sehir)
+    - [Los Angeles](sehir)
+    - [los angeles](sehir)
+    - [Toronto](sehir)
+    - [toronto](sehir)
+    - [Buenos Aires](sehir)
+    - [buenos aires](sehir)
+    - [Cape Town](sehir)
+    - [cape town](sehir)
+    - [Hong Kong](sehir)
+    - [hong kong](sehir)
+    - [Mexico City](sehir)
+    - [mexico city](sehir)
+    - [Melbourne](sehir)
+    - [melbourne](sehir)
+    - [Sydney](sehir)
+    - [sydney](sehir)
+    - [Riyad](sehir)
+    - [riyad](sehir)
+    - [Kahire](sehir)
+    - [kahire](sehir)
+    - [Oslo](sehir)
+    - [oslo](sehir)
+    - [Stockholm](sehir)
+    - [stockholm](sehir)
+    - [Amsterdam](sehir)
+    - [amsterdam](sehir)
+    - [Viyana](sehir)
+    - [viyana](sehir)
+    - [Brüksel](sehir)
+    - [brüksel](sehir)
+    - Hangi şehir olursa olsun
+    - Bunu [Bursa](sehir) için öğrenebilir miyim?
+    - [Nairobi](sehir)
+    - [nairobi](sehir)
+
+
+
+- intent: ask_time
+  examples: |
+    - Şu an saat kaç?
+    - Bugün günlerden ne?
+    - Tarih nedir?
+    - Saat kaç?
+    - Londra'da saat kaç?
+    - New York'ta şu an saat kaç?
+    - [Londra](sehir)'da saat kaç?
+    - Şu an [Berlin](sehir)'de saat kaç?
+    - Şu an [Sydney](sehir)'de saat kaç?
+    - [Paris](sehir) saat dilimine göre şu an nedir?
+    - [Los Angeles](sehir)'ta saat kaç?
+    - Şu an [Kahire](sehir)'de günlerden ne?
+    - [Moskova](sehir)'da şu an saat kaç?
+    - [Seul](sehir) saati nedir?
+    - [Bangkok](sehir)'ta saat kaç?
+    - [Tokyo](sehir) saati nedir?
+    - [İstanbul](sehir)'da tarih nedir?
+    - [Toronto](sehir)'da şu an günlerden ne?
+    - [Dubai](sehir)'de saat kaç?
+    - [dubai](sehir)'de saat kaç?
+    - [Hong Kong](sehir)'da şu an saat kaç?
+    - [Riyad](sehir)'da şu an saat nedir?
+    - [Pekin](sehir)'de gün ve saat nedir?
+    - [Mexico City](sehir)'de şu an saat kaç?
+    - [paris](sehir)'de şu an saat kaç?
+    - [hong kong](sehir)'de şu an saat kaç?
+    - Şu an [Cape Town](sehir)'da saat nedir?
+    - [Auckland](sehir)'da gün ve saat kaç?
+    - [Melbourne](sehir)'da hangi gündeyiz?
+    - [Fiji](sehir)'de şu an saat kaç?
+    - Şu an [Reykjavik](sehir)'te saat kaç?
+    - [Honolulu](sehir)'da tarih ve saat nedir?
+    - [Buenos Aires](sehir)'te şu an günlerden ne?
+    - [Manila](sehir)'da tarih ve saat bilgisi nedir?
+    - [Helsinki](sehir)'de gün ve saat nedir?
+
+
+- synonym: Manisa
+  examples: |
+    - manisa
+    - MANİSA
+
+- synonym: Ankara
+  examples: |
+    - ankara
+    - ANKARA
+
+
+- synonym: New York
+  examples: |
+    - new york
+    - NEW YORK
+    - New York
+    - nyc
+    - NYC
+    - N.Y.C
+    - n.y.c
+    - new-york
+    - NEW-YORK
+    - ny
+    - NY
+- synonym: Londra
+  examples: |
+    - londra
+    - LONDRA
+    - Londra
+    - london
+    - London
+    - LONDON
+    - londn
+    - londr
+
+- synonym: Paris
+  examples: |
+    - paris
+    - PARIS
+    - Paris
+    - pariz
+    - pari
+    - Pariz
+    - PARİS
+
+- synonym: Tokyo
+  examples: |
+    - tokyo
+    - TOKYO
+    - Tokyo
+    - tokyou
+    - Tokeo
+    - TYO
+    - tokeo
+
+- synonym: Berlin
+  examples: |
+    - berlin
+    - BERLIN
+    - Berlin
+    - berlın
+    - berlyn
+    - berlın'de
+    - berlin city
+
+- synonym: Moskova
+  examples: |
+    - moskova
+    - MOSKOVA
+    - Moskova
+    - moscow
+    - Moscow
+    - MOSCOW
+    - moskva
+    - mosco
+
+- synonym: Kahire
+  examples: |
+    - kahire
+    - KAHIRE
+    - Kahire
+    - cairo
+    - Cairo
+    - CAIRO
+    - kahira
+    - kahr
+
+- synonym: Dubai
+  examples: |
+    - dubai
+    - DUBAI
+    - Dubai
+    - dubayy
+    - Dubayy
+    - DUBAI CITY
+    - dubey
+
+- synonym: Sao Paulo
+  examples: |
+    - sao paulo
+    - SAO PAULO
+    - Sao Paulo
+    - saopaulo
+    - SAO-PAULO
+    - sao-palo
+    - Sao-Paulo
+
+- synonym: Buenos Aires
+  examples: |
+    - buenos aires
+    - BUENOS AIRES
+    - Buenos Aires
+    - buenosaires
+    - buenos-ayres
+    - BAIRES
+    - B.Aires
+
+- synonym: Rio de Janeiro
+  examples: |
+    - rio de janeiro
+    - RIO DE JANEIRO
+    - Rio de Janeiro
+    - rio
+    - RIO
+    - Rio City
+    - RIO DE JANEIRO CITY
+    - rıo
+
+- synonym: Hong Kong
+  examples: |
+    - hong kong
+    - HONG KONG
+    - Hong Kong
+    - hongkong
+    - hong-kong
+    - HK
+    - hk city
+
+- synonym: Los Angeles
+  examples: |
+    - los angeles
+    - LOS ANGELES
+    - Los Angeles
+    - L.A
+    - LA
+    - losangeles
+    - los-angeles
+    - LA City
+
+- synonym: Pekin
+  examples: |
+    - pekin
+    - PEKIN
+    - Pekin
+    - beijing
+    - Beijing
+    - BEIJING
+
+
+- synonym: Seul
+  examples: |
+    - seul
+    - SEUL
+    - Seul
+    - seoul
+    - Seoul
+    - SEOUL
+    - seul city
